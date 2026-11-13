@@ -1,0 +1,1468 @@
+:root{color-scheme:dark;--text:#eff8ff;--muted:#bed2e2}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#061b2b;color:var(--text);font:17px/1.65 system-ui,Segoe UI,sans-serif;text-align:center}.cover{min-height:100svh;background:linear-gradient(#02162240,#02162240),url('img/portada.jpg') center/cover;display:grid;place-items:center;padding:22px}.cover-inner{width:min(100%,650px)}.eyebrow{font-weight:700;letter-spacing:.19em;font-size:clamp(15px,3vw,25px);text-shadow:0 2px 12px #000}.logo-button{display:flex;flex-direction:column;align-items:center;justify-content:center;width:176px;height:176px;border-radius:50%;margin:45px auto 26px;border:3px solid #9de6ff;background:radial-gradient(circle at 30% 25%,#137dbe,#021e45);box-shadow:0 0 24px #30aeff80;cursor:pointer;color:white;animation:float 3s ease-in-out infinite}.logo-button .logo-letter{font-size:83px;line-height:1;font-weight:900}.logo-button small{font-size:9px;letter-spacing:.08em}.cover h1{font-size:clamp(38px,10vw,75px);letter-spacing:.14em;margin:0}.year{font-size:33px;letter-spacing:.4em;margin:0}@keyframes float{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-10px) scale(1.06)}}.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:40px 16px;background:url('img/fondo.png') center/cover}.hero-image{width:min(100%,980px);background:#00111e80;border:1px solid #ffffff75;border-radius:19px;padding:12px;box-shadow:0 15px 70px #0008}.photo-placeholder{min-height:min(65vw,470px);background:linear-gradient(120deg,#093153bd,#09283acd),url('img/galeria.jpg') center/cover;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:20px}.photo-placeholder span{font-weight:700;letter-spacing:.08em}.photo-placeholder small{font-size:13px;color:#d9e4ed}.scroll-cue{letter-spacing:.15em;font-size:12px}.section{padding:105px 18px;min-height:450px;background:linear-gradient(145deg,#001b2bd9,#07182fee),url('img/fondo.png') center/cover}.section:nth-child(odd){background:linear-gradient(145deg,#03152ee0,#002e47de),url('img/galeria.jpg') center/cover}.section>*{max-width:760px;margin-left:auto;margin-right:auto}.section h2{font-family:Georgia,serif;font-size:clamp(32px,6vw,53px);line-height:1.15;margin-bottom:34px}.section p{font-size:clamp(17px,2vw,21px)}.muted{color:var(--muted)}.small{font-size:13px!important}.countdown{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}.countdown div{min-width:75px;border:1px solid #ffffff55;background:#c9e8ff16;padding:18px 10px;border-radius:14px}.countdown b,.countdown small{display:block}.countdown b{font-size:32px}.countdown small{font-size:10px;letter-spacing:.1em}.graduate-demo{background:#d8f5ff12;padding:23px;border:1px solid #ffffff4d;border-radius:12px;display:flex;justify-content:space-between;gap:15px;max-width:500px;font-size:15px}.graduate-demo span{color:#bfeaff}.gallery-card{min-height:260px;border-radius:15px;background:url('img/galeria.jpg') center/cover;display:grid;place-items:center;border:1px solid #ffffff44;font-weight:700}.slideshow{height:260px;position:relative;overflow:hidden;border-radius:15px;border:1px solid #9bc9ff55}.slide{position:absolute;inset:0;display:grid;place-items:center;opacity:0;transform:scale(1.12);transition:opacity 1.5s,transform 4s;background:linear-gradient(45deg,#06263acc,#12426bba),url('img/galeria.jpg') center/cover;font-size:clamp(20px,5vw,40px);font-weight:700;letter-spacing:.08em;padding:15px}.slide.on{opacity:1;transform:scale(1)}footer{background:#031321;padding:50px 15px;color:#a7c4d7;font-size:13px}.reveal{opacity:0;transform:translateY(38px);transition:opacity .75s ease,transform .75s ease}.reveal.visible{opacity:1;transform:translateY(0)}@media(max-width:600px){.cover{background-size:100% 100%}.section{padding:75px 18px}.hero{background-size:cover}.photo-placeholder{min-height:300px}.graduate-demo{flex-direction:column;align-items:center}.logo-button{width:160px;height:160px}}@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+
+
+/* ===== PORTADA JAMCETS 2026 ===== */
+
+.cover-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    text-align: center;
+}
+
+/* NOMBRE DEL COLEGIO */
+
+.nombre-colegio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    font-family: Arial, sans-serif;
+    font-weight: 900;
+    line-height: 1.05;
+    text-shadow: 2px 3px 6px rgba(0,0,0,0.5);
+}
+
+.nombre-colegio span {
+    font-size: clamp(28px, 5vw, 42px);
+}
+
+.nombre-colegio small {
+    font-size: 13px;
+    letter-spacing: 5px;
+    margin-top: 6px;
+}
+
+/* LOGO ANIMADO */
+
+.cover .logo-button {
+    width: 170px;
+    height: 170px;
+    padding: 0;
+    margin: 10px auto;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    cursor: pointer;
+    animation: flotarLogo 3s ease-in-out infinite;
+}
+
+.logo-imagen {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+@keyframes flotarLogo {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+    }
+
+    50% {
+        transform: translateY(-10px) scale(1.06);
+    }
+}
+
+/* NOMBRE DE LA PROMOCIÓN */
+
+.nombre-promocion {
+    color: white;
+    text-align: center;
+}
+
+.nombre-promocion h1 {
+    font-family: Georgia, serif;
+    font-size: clamp(26px, 5vw, 38px);
+    font-style: italic;
+    margin: 0;
+}
+
+.nombre-promocion p {
+    font-family: Georgia, serif;
+    font-size: clamp(36px, 7vw, 50px);
+    font-style: italic;
+    font-weight: bold;
+    line-height: 1;
+    margin: 0;
+}
+
+/* ADAPTACIÓN PARA CELULARES */
+
+@media (max-width: 600px) {
+
+    .cover .logo-button {
+        width: 145px;
+        height: 145px;
+    }
+
+    .nombre-colegio span {
+        font-size: 28px;
+    }
+
+    .nombre-promocion h1 {
+        font-size: 28px;
+    }
+
+    .nombre-promocion p {
+        font-size: 38px;
+    }
+}
+
+/* FOTOGRAFÍA GRUPAL */
+
+.foto-grupal {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 70svh;
+    object-fit: contain;
+    border-radius: 20px;
+    margin: auto;
+}
+
+/* ===== AMPLIAR FOTOGRAFÍA GRUPAL ===== */
+
+.hero {
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+}
+
+.hero-image {
+    width: 100% !important;
+    max-width: 1100px !important;
+    padding: 6px !important;
+    border-radius: 25px;
+}
+
+.foto-grupal {
+    display: block;
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+/* AJUSTE PARA CELULARES */
+
+@media (max-width: 600px) {
+    .hero {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+
+    .hero-image {
+        width: 100% !important;
+        padding: 5px !important;
+    }
+}
+
+/* VISOR DE FOTOGRAFÍA AMPLIADA */
+
+.foto-grupal {
+    cursor: zoom-in;
+}
+
+.visor-foto {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    background: rgba(0, 0, 0, 0.95);
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 65px 12px 20px;
+}
+
+.visor-foto.activo {
+    display: flex;
+}
+
+.visor-foto-contenido {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
+}
+
+.visor-foto-contenido img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: transform 0.25s ease;
+}
+
+.controles-zoom {
+    position: absolute;
+    top: 15px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.controles-zoom button {
+    width: 48px;
+    height: 48px;
+    border: 1px solid white;
+    border-radius: 50%;
+    background: #123d60;
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+body:has(#invitation:not([hidden])) .control-musica {
+    display: block;
+}
+
+/* BOTÓN MUSICAL CIRCULAR */
+
+.control-musica {
+    position: fixed !important;
+    bottom: 20px;
+    right: 20px;
+    width: 55px;
+    height: 55px;
+    border-radius: 50% !important;
+    background: linear-gradient(145deg, #087fc1, #032c59);
+    border: 2px solid #a8eaff;
+    color: white;
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 99999;
+    box-shadow: 0 0 18px #00aaff80;
+    transition: transform 0.3s ease;
+}
+
+.control-musica:hover {
+    transform: scale(1.12);
+}
+
+/* ===== DISEÑO CUENTA REGRESIVA ===== */
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
+    margin: 45px auto;
+}
+
+.countdown div {
+    width: 125px;
+    min-height: 125px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(145deg, #07518a, #031d3b);
+    border: 2px solid #56c9ff;
+    border-radius: 18px;
+    box-shadow: 0 0 20px #008cff55;
+    transition: transform 0.3s ease;
+}
+
+.countdown div b {
+    font-size: 43px;
+    color: white;
+    line-height: 1.2;
+}
+
+.countdown div small {
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: #a8eaff;
+    margin-top: 8px;
+}
+
+.countdown div:hover {
+    transform: translateY(-6px);
+}
+
+/* CELULARES */
+
+@media (max-width: 600px) {
+    .countdown {
+        gap: 10px;
+    }
+
+    .countdown div {
+        width: 105px;
+        min-height: 105px;
+    }
+
+    .countdown div b {
+        font-size: 34px;
+    }
+}
+
+
+/* ===== CUENTA REGRESIVA EN UNA SOLA FILA ===== */
+
+@media (max-width: 600px) {
+
+    .countdown {
+        display: flex;
+        flex-wrap: nowrap !important;
+        justify-content: center;
+        gap: 6px;
+        width: 100%;
+        padding: 0 3px;
+    }
+
+    .countdown div {
+        flex: 1 1 0;
+        min-width: 0 !important;
+        width: auto;
+        min-height: 85px;
+        padding: 10px 2px;
+        border-radius: 12px;
+    }
+
+    .countdown div b {
+        font-size: clamp(20px, 6vw, 27px);
+    }
+
+    .countdown div small {
+        font-size: 8px;
+        letter-spacing: 1px;
+    }
+}
+
+/* SEPARACIÓN DEL TÍTULO FALTAN */
+
+.section:has(.countdown) h2 {
+    margin-top: 150px;
+}
+
+/* ===== LISTA DE EGRESADOS ===== */
+
+.lista-egresados {
+    width: min(100%, 850px);
+    margin: 40px auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+}
+
+.egresado-btn {
+    padding: 17px 12px;
+    min-height: 60px;
+    border: 1px solid #55caff;
+    border-radius: 12px;
+    background: linear-gradient(145deg, #073b65, #031a35);
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 0 12px #008cff25;
+    transition: all 0.3s ease;
+}
+
+.egresado-btn:hover {
+    background: linear-gradient(145deg, #087fc1, #06345c);
+    border-color: #b2edff;
+    transform: translateY(-4px);
+    box-shadow: 0 0 18px #20aaff65;
+}
+
+/* ADAPTACIÓN PARA CELULARES */
+
+@media (max-width: 600px) {
+
+    .lista-egresados {
+        grid-template-columns: 1fr;
+        gap: 11px;
+        padding: 0 5px;
+    }
+
+    .egresado-btn {
+        width: 100%;
+        min-height: 55px;
+        font-size: 14px;
+    }
+}
+
+
+/* ===== VENTANA DE ACCESO DE EGRESADOS ===== */
+
+.modal-egresado {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: rgba(0, 10, 25, 0.90);
+    backdrop-filter: blur(8px);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.modal-egresado.activo {
+    display: flex;
+}
+
+.modal-contenido {
+    position: relative;
+    width: min(100%, 430px);
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 35px 25px;
+    text-align: center;
+    background: linear-gradient(145deg, #062d4c, #03152e);
+    border: 1px solid #55caff;
+    border-radius: 20px;
+    box-shadow: 0 0 35px #008cff45;
+}
+
+.modal-contenido h2 {
+    font-family: Georgia, serif;
+    font-size: 25px;
+    margin: 15px 0;
+    color: #ffffff;
+}
+
+.modal-contenido p {
+    color: #bed2e2;
+    font-size: 16px;
+}
+
+.cerrar-modal {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+#codigo-egresado {
+    width: 180px;
+    padding: 15px;
+    margin: 15px auto;
+    display: block;
+    text-align: center;
+    font-size: 25px;
+    letter-spacing: 12px;
+    color: white;
+    background: #001c35;
+    border: 1px solid #55caff;
+    border-radius: 10px;
+    outline: none;
+}
+
+#validar-codigo {
+    padding: 13px 25px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(145deg, #087fc1, #034b80);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#foto-egresado {
+    display: none;
+    width: 100%;
+    height: auto;
+    margin-top: 25px;
+    border-radius: 12px;
+    border: 1px solid #55caff;
+}
+
+#mensaje-error {
+    color: #ff8585;
+    font-size: 14px;
+}
+
+/* ===== GALERÍA PERSONAL JAMCETS 2026 ===== */
+
+.galeria-egresado {
+    display: none;
+    width: 100%;
+    margin-top: 25px;
+    text-align: center;
+}
+
+.galeria-egresado h3 {
+    font-family: Georgia, serif;
+    font-size: 25px;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.galeria-descripcion {
+    color: #bed2e2;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+/* CONTENEDOR DE LAS TRES FOTOGRAFÍAS */
+
+.fotos-egresado {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 15px;
+    width: 100%;
+}
+
+/* TARJETAS INDIVIDUALES */
+
+.tarjeta-foto {
+    padding: 12px;
+    background: linear-gradient(145deg, #073b65, #031a35);
+    border: 1px solid #55caff;
+    border-radius: 15px;
+    box-shadow: 0 0 15px #008cff35;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* FOTOGRAFÍAS */
+
+.tarjeta-foto img {
+    width: 100%;
+    height: 220px;
+    object-fit: contain;
+    border-radius: 10px;
+    cursor: zoom-in;
+    background: #001526;
+}
+
+/* BOTONES DE DESCARGA */
+
+.boton-descarga {
+    display: block;
+    padding: 12px 8px;
+    background: linear-gradient(145deg, #087fc1, #034b80);
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.boton-descarga:hover {
+    transform: translateY(-3px);
+    background: linear-gradient(145deg, #0a98df, #075b98);
+}
+
+/* AMPLIAR VENTANA CUANDO APAREZCA LA GALERÍA */
+
+.modal-contenido:has(.galeria-egresado[style*="display: block"]) {
+    width: min(95vw, 1050px);
+}
+
+/* ADAPTACIÓN PARA CELULARES */
+
+@media (max-width: 600px) {
+
+    .fotos-egresado {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .tarjeta-foto {
+        padding: 12px;
+    }
+
+    .tarjeta-foto img {
+        height: auto;
+        max-height: 420px;
+        object-fit: contain;
+    }
+
+    .boton-descarga {
+        font-size: 14px;
+        padding: 14px;
+    }
+
+    .galeria-egresado h3 {
+        font-size: 22px;
+    }
+
+    .modal-contenido:has(.galeria-egresado[style*="display: block"]) {
+        width: 95vw;
+        padding: 25px 15px;
+    }
+}
+
+/* ===== GALERÍA DE RECUERDOS JAMCETS 2026 ===== */
+
+.galeria-recuerdos {
+    width: min(100%, 1100px);
+    max-width: 1100px;
+    margin: 40px auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+/* CONTENEDOR DE CADA FOTOGRAFÍA */
+
+.recuerdo-foto {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    border-radius: 15px;
+    border: 2px solid #55caff;
+    background: #031a35;
+    box-shadow: 0 8px 25px rgba(0, 140, 255, 0.20);
+    cursor: zoom-in;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* IMÁGENES */
+
+.recuerdo-foto img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+/* EFECTO AL PASAR EL CURSOR */
+
+.recuerdo-foto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 170, 255, 0.35);
+}
+
+.recuerdo-foto:hover img {
+    transform: scale(1.05);
+}
+
+/* ADAPTACIÓN PARA TABLETAS */
+
+@media (max-width: 900px) {
+
+    .galeria-recuerdos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+    }
+
+}
+
+/* ADAPTACIÓN PARA CELULARES */
+
+@media (max-width: 600px) {
+
+    .galeria-recuerdos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        padding: 0 5px;
+    }
+
+    .recuerdo-foto {
+        border-radius: 10px;
+        border-width: 1px;
+    }
+
+}
+
+/* ===== LUGAR DEL EVENTO JAMCETS 2026 ===== */
+
+.lugar-evento {
+    text-align: center;
+}
+
+.tarjeta-ubicacion {
+    width: min(100%, 750px);
+    margin: 45px auto;
+    padding: 35px 25px;
+    background: linear-gradient(145deg, #073b65, #031a35);
+    border: 2px solid #55caff;
+    border-radius: 22px;
+    box-shadow: 0 10px 35px rgba(0, 140, 255, 0.25);
+}
+
+/* NOMBRE DEL SALÓN */
+
+.ubicacion-encabezado {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.ubicacion-icono {
+    display: block;
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.ubicacion-encabezado h3 {
+    font-family: Georgia, serif;
+    font-size: clamp(24px, 5vw, 34px);
+    color: #ffffff;
+    margin: 10px 0;
+}
+
+/* FECHA, HORA Y DIRECCIÓN */
+
+.ubicacion-datos {
+    margin-bottom: 30px;
+}
+
+.ubicacion-datos p {
+    color: #d5edff;
+    font-size: 17px;
+    margin: 12px 0;
+    line-height: 1.6;
+}
+
+/* MAPA INTERACTIVO */
+
+.contenedor-mapa {
+    width: 100%;
+    min-height: 280px;
+    margin: 25px auto;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid #55caff;
+    background: #031526;
+}
+
+.contenedor-mapa iframe {
+    display: block;
+    width: 100%;
+    height: 320px;
+    border: none;
+}
+
+.mapa-pendiente {
+    min-height: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    color: #bed2e2;
+}
+
+/* BOTÓN CÓMO LLEGAR */
+
+.boton-como-llegar {
+    display: inline-block;
+    padding: 15px 35px;
+    margin-top: 10px;
+    background: linear-gradient(145deg, #087fc1, #034b80);
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    border: 1px solid #55caff;
+    border-radius: 12px;
+    box-shadow: 0 5px 18px rgba(0, 140, 255, 0.3);
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.boton-como-llegar:hover {
+    transform: translateY(-3px);
+    background: linear-gradient(145deg, #0a98df, #075b98);
+}
+
+/* BOTÓN DESHABILITADO HASTA CONFIRMAR UBICACIÓN */
+
+.boton-como-llegar[aria-disabled="true"] {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+/* ===== ADAPTACIÓN PARA CELULARES ===== */
+
+@media (max-width: 600px) {
+
+    .tarjeta-ubicacion {
+        width: 100%;
+        padding: 25px 15px;
+        margin: 30px auto;
+        border-radius: 16px;
+    }
+
+    .ubicacion-encabezado h3 {
+        font-size: 25px;
+    }
+
+    .ubicacion-datos p {
+        font-size: 15px;
+    }
+
+    .contenedor-mapa {
+        min-height: 250px;
+    }
+
+    .contenedor-mapa iframe {
+        height: 270px;
+    }
+
+    .boton-como-llegar {
+        width: 100%;
+        max-width: 300px;
+        padding: 15px 20px;
+        font-size: 15px;
+    }
+}
+
+/* ===== MOMENTOS INOLVIDABLES JAMCETS 2026 ===== */
+
+.carrusel-momentos {
+    position: relative;
+    width: min(100%, 1000px);
+    height: 550px;
+    margin: 45px auto;
+    overflow: hidden;
+    border-radius: 20px;
+    border: 2px solid #55caff;
+    background: #031526;
+    box-shadow: 0 12px 35px rgba(0, 140, 255, 0.25);
+}
+
+/* CONTENEDOR DE FOTOGRAFÍAS */
+
+.imagenes-momentos {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* CADA FOTOGRAFÍA */
+
+.imagen-momento {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    opacity: 0;
+    transition: opacity 1.2s ease;
+    cursor: zoom-in;
+}
+
+/* FOTOGRAFÍA ACTIVA */
+
+.imagen-momento.activa {
+    opacity: 1;
+    z-index: 1;
+}
+
+/* FLECHAS DE NAVEGACIÓN */
+
+.flecha-momento {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+    width: 45px;
+    height: 45px;
+    border: 1px solid #55caff;
+    border-radius: 50%;
+    background: rgba(3, 26, 53, 0.8);
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.flecha-momento.anterior {
+    left: 15px;
+}
+
+.flecha-momento.siguiente {
+    right: 15px;
+}
+
+/* INDICADORES INFERIORES */
+
+.indicadores-momentos {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.indicador-momento {
+    width: 10px;
+    height: 10px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+}
+
+.indicador-momento.activo {
+    background: #55caff;
+    box-shadow: 0 0 10px #55caff;
+}
+
+/* ADAPTACIÓN PARA CELULARES */
+
+@media (max-width: 600px) {
+
+    .carrusel-momentos {
+        height: 350px;
+        margin: 30px auto;
+        border-radius: 14px;
+    }
+
+    .flecha-momento {
+        width: 38px;
+        height: 38px;
+        font-size: 18px;
+    }
+
+    .flecha-momento.anterior {
+        left: 8px;
+    }
+
+    .flecha-momento.siguiente {
+        right: 8px;
+    }
+}
+
+/* ===== CIERRE JAMCETS 2026 ===== */
+
+.cierre-jamcets {
+    position: relative;
+    padding: 100px 20px;
+    background:
+        radial-gradient(circle at top, #0b4265 0%, transparent 60%),
+        linear-gradient(180deg, #061b2b, #020d1b);
+    text-align: center;
+    overflow: hidden;
+}
+
+/* CONTENIDO PRINCIPAL */
+
+.cierre-contenido {
+    width: min(100%, 950px);
+    margin: 0 auto;
+}
+
+/* TÍTULO DE AGRADECIMIENTO */
+
+.cierre-jamcets h2 {
+    font-family: Georgia, serif;
+    font-size: clamp(28px, 5vw, 44px);
+    color: #ffffff;
+    margin-bottom: 30px;
+    line-height: 1.3;
+}
+
+/* MENSAJE DE AGRADECIMIENTO */
+
+.cierre-mensaje {
+    max-width: 720px;
+    margin: 15px auto;
+    font-size: clamp(16px, 2.5vw, 20px);
+    line-height: 1.9;
+    color: #d5edff;
+}
+
+/* FRASE DE AGRADECIMIENTO DESTACADA */
+
+.cierre-gracias {
+    margin: 35px auto;
+    font-family: Georgia, serif;
+    font-size: clamp(20px, 3vw, 28px);
+    font-weight: bold;
+    color: #79d8ff;
+}
+
+/* SEPARADOR DECORATIVO */
+
+.cierre-separador {
+    width: 140px;
+    height: 3px;
+    margin: 65px auto;
+    border-radius: 10px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #55caff,
+        transparent
+    );
+}
+
+/* TÍTULO JAMCETS 2026 */
+
+.cierre-jamcets .cierre-titulo-jamcets {
+    font-size: clamp(38px, 8vw, 70px);
+    font-weight: bold;
+    letter-spacing: 5px;
+    color: #ffffff;
+    text-shadow: 0 0 20px rgba(85, 202, 255, 0.5);
+    margin-bottom: 45px;
+}
+
+/* SIGNIFICADO DE JAMCETS */
+
+.significado-jamcets {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 10px;
+    width: 100%;
+    margin: 40px auto;
+}
+
+/* TARJETAS DE CADA LETRA */
+
+.letra-jamcets {
+    min-width: 0;
+    padding: 22px 5px;
+    border: 1px solid #55caff;
+    border-radius: 15px;
+    background: linear-gradient(145deg, #073b65, #031a35);
+    box-shadow: 0 5px 20px rgba(0, 140, 255, 0.18);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* LETRAS GRANDES */
+
+.letra-jamcets span {
+    display: block;
+    font-family: Georgia, serif;
+    font-size: clamp(30px, 4vw, 48px);
+    font-weight: bold;
+    line-height: 1.2;
+    color: #79d8ff;
+    text-shadow: 0 0 12px rgba(85, 202, 255, 0.4);
+}
+
+/* SIGNIFICADO DE CADA LETRA */
+
+.letra-jamcets p {
+    font-size: clamp(10px, 1.2vw, 13px);
+    line-height: 1.5;
+    color: #ffffff;
+    margin: 12px 0 0;
+    overflow-wrap: anywhere;
+}
+
+/* EFECTO AL PASAR EL CURSOR */
+
+.letra-jamcets:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(85, 202, 255, 0.35);
+}
+
+/* FRASE FINAL */
+
+.cierre-frase {
+    max-width: 700px;
+    margin: 60px auto 30px;
+    font-family: Georgia, serif;
+    font-size: clamp(19px, 3vw, 27px);
+    font-style: italic;
+    line-height: 1.7;
+    color: #bedfff;
+}
+
+/* NOMBRE DEL COLEGIO */
+
+.cierre-colegio {
+    margin-top: 35px;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #79d8ff;
+}
+
+/* ===== ADAPTACIÓN PARA TABLETAS ===== */
+
+@media (max-width: 900px) {
+
+    .significado-jamcets {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .letra-jamcets {
+        padding: 20px 8px;
+    }
+
+    .letra-jamcets p {
+        font-size: 12px;
+    }
+}
+
+/* ===== ADAPTACIÓN PARA CELULARES ===== */
+
+@media (max-width: 600px) {
+
+    .cierre-jamcets {
+        padding: 75px 15px;
+    }
+
+    .cierre-jamcets h2 {
+        font-size: 28px;
+    }
+
+    .cierre-mensaje {
+        font-size: 16px;
+        line-height: 1.8;
+    }
+
+    .cierre-gracias {
+        font-size: 21px;
+    }
+
+    .cierre-separador {
+        margin: 45px auto;
+    }
+
+    .cierre-jamcets .cierre-titulo-jamcets {
+        font-size: 36px;
+        letter-spacing: 3px;
+    }
+
+    .significado-jamcets {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .letra-jamcets {
+        padding: 20px 10px;
+    }
+
+    .letra-jamcets span {
+        font-size: 42px;
+    }
+
+    .letra-jamcets p {
+        font-size: 13px;
+    }
+
+    /* ÚLTIMA LETRA CENTRADA */
+
+    .letra-jamcets:last-child {
+        grid-column: 1 / -1;
+        width: calc(50% - 6px);
+        justify-self: center;
+    }
+
+    .cierre-frase {
+        margin-top: 45px;
+        font-size: 20px;
+    }
+
+    .cierre-colegio {
+        font-size: 13px;
+        letter-spacing: 1px;
+    }
+}
+
+/* ===== FOOTER PREMIUM STUDIO MEMORY ===== */
+
+.footer-memory {
+    background: linear-gradient(
+        180deg,
+        #061b2b 0%,
+        #031321 100%
+    );
+
+    padding: 55px 20px 65px;
+    text-align: center;
+    border-top: 1px solid rgba(85, 202, 255, 0.15);
+}
+
+/* CONTENEDOR */
+
+.footer-memory-contenido {
+    max-width: 480px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* LOGOTIPO */
+
+.footer-memory-logo {
+    display: block;
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin: 0 auto 12px;
+}
+
+/* NOMBRE DEL ESTUDIO */
+
+.footer-memory-marca h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 43px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    line-height: 1.1;
+    color: #ffffff;
+    margin: 0;
+}
+
+.footer-memory-marca span {
+    display: block;
+    font-family: Georgia, serif;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 6px;
+    color: #a8eaff;
+    margin-top: 9px;
+}
+
+/* SEPARADOR ELEGANTE */
+
+.footer-memory-separador {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    width: 200px;
+    margin: 26px auto 25px;
+}
+
+.footer-memory-separador span {
+    height: 1px;
+    flex: 1;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #79d8ff
+    );
+}
+
+.footer-memory-separador span:last-child {
+    background: linear-gradient(
+        90deg,
+        #79d8ff,
+        transparent
+    );
+}
+
+.footer-memory-separador i {
+    color: #79d8ff;
+    font-style: normal;
+    font-size: 15px;
+}
+
+/* PREGUNTA PRINCIPAL */
+
+.footer-memory h3 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 23px;
+    font-weight: bold;
+    color: #ffffff;
+    margin: 0 0 8px;
+}
+
+/* DESCRIPCIÓN */
+
+.footer-memory p {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #bed2e2;
+    margin: 0 0 28px;
+}
+
+/* BOTÓN RESERVAR INVITACIÓN */
+
+.footer-memory-boton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    min-height: 54px;
+    width: min(100%, 320px);
+
+    padding: 14px 22px;
+
+    background: #ffffff;
+    color: #15354b;
+
+    border: 1px solid #d6efff;
+    border-radius: 50px;
+
+    text-decoration: none;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+
+    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.25);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.footer-memory-boton span {
+    font-size: 21px;
+}
+
+.footer-memory-boton:not([aria-disabled="true"]):hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 28px rgba(85, 202, 255, 0.25);
+}
+
+/* BOTÓN PENDIENTE DE CONFIGURACIÓN */
+
+.footer-memory-boton[aria-disabled="true"] {
+    opacity: 0.7;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+/* ===== ADAPTACIÓN PARA CELULARES ===== */
+
+@media (max-width: 600px) {
+
+    .footer-memory {
+        padding: 45px 18px 55px;
+    }
+
+    .footer-memory-logo {
+        width: 70px;
+        height: 70px;
+    }
+
+    .footer-memory-marca h2 {
+        font-size: 38px;
+    }
+
+    .footer-memory-marca span {
+        font-size: 10px;
+        letter-spacing: 5px;
+    }
+
+    .footer-memory h3 {
+        font-size: 21px;
+    }
+
+    .footer-memory p {
+        font-size: 14px;
+    }
+
+    .footer-memory-boton {
+        font-size: 13px;
+        min-height: 52px;
+    }
+}
+
+/* ===== PREPARACIÓN DEL VISOR PARA ZOOM TÁCTIL ===== */
+
+/* Área donde se manipulará la fotografía */
+
+.visor-foto-contenido {
+    overflow: hidden;
+    touch-action: none;
+    user-select: none;
+    -webkit-user-select: none;
+    overscroll-behavior: contain;
+}
+
+/* Fotografía ampliada */
+
+.visor-foto-contenido img {
+    max-width: 100%;
+    max-height: 100%;
+
+    object-fit: contain;
+
+    touch-action: none;
+
+    user-select: none;
+    -webkit-user-select: none;
+
+    -webkit-user-drag: none;
+
+    transform-origin: center center;
+}
+
+/* Evitar el desplazamiento de la página
+   mientras se utiliza el visor */
+
+body:has(.visor-foto.activo) {
+    overflow: hidden;
+}
+
+/* Mantener los controles por encima de la fotografía */
+
+.visor-foto .controles-zoom {
+    z-index: 10;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* ===== MOVIMIENTO FLUIDO DEL ZOOM TÁCTIL ===== */
+
+.visor-foto-contenido img {
+    transition: none !important;
+}
+
+/* ===== JAMCETS EN UNA SOLA FILA EN CELULARES ===== */
+
+@media (max-width: 600px) {
+
+    .cierre-jamcets .significado-jamcets {
+        display: grid;
+        grid-template-columns: repeat(7, minmax(0, 1fr));
+        gap: 3px;
+        width: 100%;
+        margin: 30px auto;
+    }
+
+    /* Tarjetas de las siete letras */
+
+    .cierre-jamcets .letra-jamcets {
+        min-width: 0;
+        width: 100%;
+        padding: 12px 2px;
+        border-radius: 7px;
+    }
+
+    /* Letras J A M C E T S */
+
+    .cierre-jamcets .letra-jamcets span {
+        font-size: clamp(20px, 5vw, 28px);
+        line-height: 1.2;
+    }
+
+    /* Significado debajo de cada letra */
+
+    .cierre-jamcets .letra-jamcets p {
+        font-size: 7px;
+        line-height: 1.3;
+        margin-top: 8px;
+        overflow-wrap: anywhere;
+        word-break: normal;
+    }
+
+    /* La última letra S continúa en la misma fila */
+
+    .cierre-jamcets .letra-jamcets:last-child {
+        grid-column: auto;
+        width: 100%;
+        justify-self: auto;
+    }
+
+}
