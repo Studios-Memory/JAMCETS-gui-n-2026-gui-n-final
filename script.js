@@ -640,7 +640,7 @@ if (visorEgresados) {
 /* ===== GALERÍA DE RECUERDOS JAMCETS 2026 ===== */
 
 // Cantidad de fotografías disponibles
-const cantidadRecuerdos = 47;
+const cantidadRecuerdos = 53;
 
 // Contenedor de la galería
 const galeriaRecuerdos = document.getElementById('galeria-recuerdos');
