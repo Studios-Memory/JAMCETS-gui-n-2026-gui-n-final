@@ -795,7 +795,7 @@ if (galeriaRecuerdos && visorRecuerdos) {
 
 /* ===== MOMENTOS INOLVIDABLES JAMCETS 2026 ===== */
 
-const cantidadMomentos = 6;
+const cantidadMomentos = 7;
 
 const contenedorMomentos = document.getElementById('imagenes-momentos');
 const indicadoresMomentos = document.getElementById('indicadores-momentos');
